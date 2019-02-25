@@ -48,3 +48,10 @@ diaTab %>%
     group_by(cut) %>% 
     summarize(AvgPrice=AVG(price)) %>% 
     show_query()
+
+diaColors <- tbl(con, 'DiamondColors')
+diaColors
+
+diamondsFull <- left_join(diaTab, diaColors, by=c('color'='Color'))
+diamondsFull
+diamondsFull %>% show_query()

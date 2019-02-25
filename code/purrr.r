@@ -39,3 +39,6 @@ class(17)
 class(sum(17))
 class(1:100)
 class(sum(1:100))
+
+list3 %>% map(class)
+list3 %>% map_chr(class)

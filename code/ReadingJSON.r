@@ -16,3 +16,20 @@ library(magrittr)
 
 pizza <- fromJSON('data/FavoriteSpots.json') %>% tidyr::unnest()
 pizza
+
+pizza$Address
+
+library(leaflet)
+
+leaflet(pizza)
+
+leaflet(pizza) %>% 
+    addTiles()
+
+leaflet(pizza) %>% 
+    addTiles() %>% 
+    addMarkers(
+        lng = ~ longitude,
+        lat = ~ latitude,
+        popup = ~ Name
+    )

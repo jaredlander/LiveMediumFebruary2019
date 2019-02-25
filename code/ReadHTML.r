@@ -16,3 +16,7 @@ ribalta %>%
 
 ribalta %>% html_nodes('.street')
 ribalta %>% html_nodes('.street') %>% html_text()
+
+ribalta %>% html_nodes('#latitude')
+ribalta %>% html_nodes('span#latitude')
+ribalta %>% html_nodes('#latitude') %>% html_attr('value')

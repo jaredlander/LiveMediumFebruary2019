@@ -26,3 +26,16 @@ sum(list3[[2]])
 sum(list3[[3]])
 
 map(list3, sum)
+list3 %>% map(sum)
+
+list3 %>% map_dbl(sum)
+list3 %>% map_int(sum)
+
+list3 %>% map(mean)
+list3 %>% map_dbl(mean)
+list3 %>% map_int(mean)
+
+class(17)
+class(sum(17))
+class(1:100)
+class(sum(1:100))

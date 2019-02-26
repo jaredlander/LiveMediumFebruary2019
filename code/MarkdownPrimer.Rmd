@@ -2,7 +2,9 @@
 title: "My First Markdown Document"
 author: "The Medium R Team"
 date: "The Best Day Ever"
-output: html_document
+output: 
+    html_document:
+        self_contained: false
 ---
 
 # My First Section
@@ -97,3 +99,24 @@ z <- 10
 x + z
 ```
 
+Let's see a table.
+
+```{r display-iris}
+head(iris)
+knitr::kable(head(iris))
+```
+
+```{r iris-datatable}
+library(DT)
+datatable(iris)
+```
+
+# Plots!!
+
+```{r load-ggplot}
+library(ggplot2)
+```
+
+```{r diamond-scatter,fig.cap='Scatterplot of diamond price versus size, by color',cache=TRUE}
+ggplot(diamonds, aes(x=carat, y=price, color=cut)) + geom_point()
+```

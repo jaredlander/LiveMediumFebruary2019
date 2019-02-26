@@ -66,3 +66,34 @@ Backticks creates `typewriter` font
 # Links
 
 [Link to my website](https://www.jaredlander.com)
+
+# R Time!!!!!!!!!!!!!!!!!
+
+Now we get to do R! We write R code inside of code chunks, which you can create with the keyboard shortcut `Alt-Ctrl-I`.
+
+```{r addition-example}
+1 + 1
+```
+
+```{r variables}
+x <- 3
+x
+```
+
+Let's see if we can use the `x` variable in a subsequent chunk.
+
+```{r multiplication}
+x * 2
+```
+
+```{r try-y, error=TRUE}
+y
+```
+
+Let's see the result of code but not the code itself.
+
+```{r simple-addition,echo=FALSE}
+z <- 10
+x + z
+```
+

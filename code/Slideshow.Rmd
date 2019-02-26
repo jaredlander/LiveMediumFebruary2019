@@ -1,0 +1,55 @@
+---
+title: Sample Slideshow
+author: Jared
+output:
+    ioslides_presentation:
+        widescreen: true
+---
+
+# First Section
+
+## Pizza
+
+1. New York
+1. New Jersey
+1. Naples
+1. Detroit
+1. Rome
+
+<div class='notes'>
+Don't forget to talk about Chicago
+</div>
+
+## Ovens
+
+a. Coal
+a. Wood
+a. Gas
+
+<div class='notes'>
+Read them in this order
+</div>
+
+# R Code
+
+## Basic Code
+
+```{r basic-math}
+x <- 2
+y <- 7
+
+x + y
+x * y
+```
+
+## Diamond Histogram
+
+```{r diamond-hist,echo=FALSE,fig.align='center'}
+library(ggplot2)
+ggplot(diamonds, aes(x=price)) + geom_histogram(bins=30)
+```
+
+<div class='notes'>
+Discuss the price of diamonds
+</div>
+

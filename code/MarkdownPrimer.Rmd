@@ -32,3 +32,37 @@ Start another subsection, still within the prior section, with two hashtags. Aga
 
 Return to sections with a single hashtag to start a new one. No need to close the subsection. Very simple.
 
+# Lists
+
+## Unordered Lists
+
+- Apples
+- Bananas
+- Oranges
+- Kiwis
+
+## Ordered Lists
+
+1. New York
+1. New Jersey
+1. Naples
+1. Detroit
+1. Rome
+
+a. Coal
+a. Wood
+a. Gas
+
+# Formatting
+
+_Text in here is emphasized_
+
+This text will be __strong text__ because of the underscores
+
+Three underscores will make the text ___emphasized and strong___
+
+Backticks creates `typewriter` font
+
+# Links
+
+[Link to my website](https://www.jaredlander.com)

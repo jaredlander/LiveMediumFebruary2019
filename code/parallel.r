@@ -80,3 +80,18 @@ result4 <- foreach(item=theList, .combine=c, .multicombine=TRUE) %dopar%
         sum(item)
     }
 result4
+
+map(theList, sum)
+lapply(theList, sum)
+
+parLapply(cl=cl, theList, sum)
+
+stopCluster(cl)
+
+library(future)
+library(furrr)
+
+plan(multiprocess)
+theList %>% map(sum)
+theList %>% future_map(sum)
+theList %>% future_map_dbl(sum)

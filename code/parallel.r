@@ -95,3 +95,40 @@ plan(multiprocess)
 theList %>% map(sum)
 theList %>% future_map(sum)
 theList %>% future_map_dbl(sum)
+
+data(diamonds, package='ggplot2')
+library(dplyr)
+library(tidyr)
+diamonds
+
+mod1 <- lm(price ~ carat, data=diamonds)
+mod1
+library(coefplot)
+coefplot(mod1)
+
+library(ggplot2)
+ggplot(diamonds, aes(x=carat, y=price, color=cut)) + 
+    geom_point() + 
+    geom_smooth(method='lm') + 
+    facet_wrap( ~ cut)
+
+diamond_mods_1 <- diamonds %>% 
+    group_by(cut) %>% 
+    nest(carat, price) %>% 
+    mutate(
+        Model=map(data, ~ lm(price ~ carat, data=.x))
+    )
+
+multiplot(diamond_mods_1$Model, single=FALSE) + theme(legend.position='bottom')
+diamond_mods_1$Model[[1]]
+diamond_mods_1$Model[[2]]
+diamond_mods_1$data[[2]]
+
+diamond_mods_2 <- diamonds %>% 
+    group_by(cut) %>% 
+    nest(carat, price) %>% 
+    mutate(
+        Model=future_map(data, ~ lm(price ~ carat, data=.x))
+    )
+diamond_mods_2
+multiplot(diamond_mods_2$Model, single=FALSE) + theme(legend.position='bottom')
